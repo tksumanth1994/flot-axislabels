@@ -29,7 +29,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 (function ($) {
     var options = {
       axisLabels: {
-        show: true
+        show: true,
+        setUp: true
       }
     };
 
@@ -437,7 +438,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
                     if (hasAxisLabels) {
                         secondPass = true;
-                        plot.setupGrid();
+                        if(options.axisLabels.setUp){
+                            plot.setupGrid();
+                        }
                         plot.draw();
                     }
                 } else {
